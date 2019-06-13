@@ -9,7 +9,7 @@
 2. [**OS structure**](https://github.com/592McAvoy/Review/blob/master/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/OS%20structure.md): 
    - kernel：Monolithic，Microkernel，hybrid，Exokernel
    - system：实模式/保护模式，启动
-3. [**Virtual memory**](https://github.com/592McAvoy/Review/blob/master/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Virtual%20memory.md): performance factors, paging structures, address translation
+3. [**Virtual Memory**](https://github.com/592McAvoy/Review/blob/master/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Virtual%20Memory.md): performance factors, paging structures, address translation
 4. Process: states switching, fork
 5. Interrupts, System calls
 6. File systems: flash, naming, consistency, logging
