@@ -14,6 +14,6 @@
 5. [**Exception, Interrupts, System calls**](https://github.com/592McAvoy/Review/blob/master/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Exception%2CInterrupts%2CSystem%20calls.md)
 6. File systems: flash, naming, consistency, logging
 7. [**Synchronization**](https://github.com/592McAvoy/Review/blob/master/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Synchronization.md): scalability, atomicity 
-8. Data race / bugs: happen-before, lockset, bugs 
+8. [**Data race / bugs**](https://github.com/592McAvoy/Review/blob/master/操作系统/Bug%26Race.md): happen-before, lockset, bugs 
 9. Virtualization: CPU, memory, I/O
 
