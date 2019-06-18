@@ -29,3 +29,74 @@ Many things are OS issues：
 - Non-Volatile Storage
 - Virtualization
   - 资源复用；容错；轻便；易于管理
+
+## 补：3. I/O
+
+### 3.1 I/O subsystem
+
+- 为什么需要？
+  - device是不可靠的（传输错误/设备fail）
+  - device的行为是难以预料的，通常还很慢
+- 目标：
+  - 为不同的设备提供一个统一的接口
+    - device driver（设备驱动）来实现standard interface
+  - 为I/O硬件提供一个抽象层
+    - 来管理并与硬件交互
+    - 隐藏硬件和操作细节
+
+### 3.2 Device Interface
+
+常见的有三种：
+
+![](img/74.png)
+
+- Character devices
+  - 键盘/鼠标，serial port，一些USB设备
+  - 序列的访问，一次一个字符
+  - get() / put()
+  - xv6中的指令：in/out
+- Block devices：
+  - disk drive, tape drive, DVD-ROM
+  - 访问以block为单位的数据
+  - Raw I/O，FS，MMIO
+- Network devices
+  - Ethernet, wireless, bluetooth
+  - 有不同于另外两种的接口，提供特殊的网络接口来支持不同的网络协议
+    - send/receive
+
+### 3.3 Synchronous and Asynchronous I/O
+
+- Blocking I/O: “Wait”
+  - 请求数据的时候block，直到data ready
+  - 写数据的时候block，直到device ready
+- Non-blocking I/O: “Don’t Wait”
+  - 一定字节的数据传输成功就直接返回
+  - 有可能什么都没读到，也没写出去
+- Asynchronous I/O: “Tell Me Later”
+  - 把user buffer的指针交给kernel，kernel完成操作（读取/接收）之后通知user
+
+### 3.5 I/O Device Notifying the OS
+
+- 轮循Polling：
+  - 方法：
+    - device把I/O的状态信息写到每个device的状态寄存器里
+    - OS周期性检查这些寄存器
+  - 优点：overhead小
+  - 缺点：当I/O少或者没有按照意料中进行时，就很浪费cycle
+- 中断Interrupt driven：
+  - 优点：能够处理unpredictable events 
+  - 缺点：中断的overhead很高
+- hybrid：
+  - eg. 高带宽网络设备：
+    - 收到一个包后发中断
+    - 后续的包采用轮循
+
+### 3.6 Device Driver
+
+设备驱动：
+
+- 含义：kernel中的device特定的代码，直接与device硬件进行交互
+  - 实现一个standard internal interface
+  - 不同的kernel I/O系统都可以很容易的与驱动进行交互
+  - 特殊的device配置是由ioctl()来支持的
+- 通常分为Top half 和 Bottom Half

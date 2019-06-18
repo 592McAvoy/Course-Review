@@ -58,6 +58,8 @@
 
 ### 3.1 MCS lock
 
+![](img/45.png)
+
 **MCS lock**
 
 - 全局只有一个MVS lock

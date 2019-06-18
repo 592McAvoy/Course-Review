@@ -2,6 +2,16 @@
 
 **参考**：[wxw大佬的笔记](https://github.com/lingxu-wxw/SE_Notes/blob/master/Operating%20System%20-%20%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.md)
 
+
+
+**WARNING：不保证正确！！！！！**
+
+**WARNING：不保证正确！！！！！**
+
+**WARNING：不保证正确！！！！！**
+
+
+
 **Key Points**
 
 1. [**OS introduction**](https://github.com/592McAvoy/Review/blob/master/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/OS%20introduction.md): 
@@ -15,5 +25,5 @@
 6. File systems: flash, naming, consistency, logging
 7. [**Synchronization**](https://github.com/592McAvoy/Review/blob/master/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Synchronization.md): scalability, atomicity 
 8. [**Data race / bugs**](https://github.com/592McAvoy/Review/blob/master/操作系统/Bug%26Race.md): happen-before, lockset, bugs 
-9. Virtualization: CPU, memory, I/O
+9. [**Virtualization**](https://github.com/592McAvoy/Review/blob/master/操作系统/Virtualization.md): CPU, memory, I/O
 
